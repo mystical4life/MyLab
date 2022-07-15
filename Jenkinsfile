@@ -67,7 +67,24 @@ pipeline{
         stage ('Deploy'){
             steps {
                 echo ' testing......'
-
+                sshPublisher(publishers: 
+                [sshPublisherDesc(
+                    configName: 'AnsibleController', 
+                    transfers: [
+                        sshTransfer(
+                            cleanRemote: false, 
+                            execCommand: 'ansible-playbook /opt/playbooks/downloadanddeploy.yaml -i /opt/playbooks/hosts', 
+                            execTimeout: 120000, 
+                    flatten: false, 
+                    makeEmptyDirs: false, 
+                    noDefaultExcludes: false, 
+                    patternSeparator: '[, ]+', 
+                    remoteDirectory: '', 
+                    remoteDirectorySDF: false, 
+                    removePrefix: '', sourceFiles: '')], 
+                    usePromotionTimestamp: false, 
+                    useWorkspaceInPromotion: false, 
+                    verbose: false)])
                 
             
             }
