@@ -4,7 +4,7 @@
   <groupId>com.ikedevopslab</groupId>
   <artifactId>ikeDevOpsLab</artifactId>
   <packaging>war</packaging>
-  <version>0.0.13</version>
+  <version>0.0.13-SNAPSHOT</version>
   <name>ikeDevOpsLab</name>
   <url>http://maven.apache.org</url>
   <dependencies>
