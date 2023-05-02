@@ -34,17 +34,17 @@ pipeline{
         stage ('Publish to Nexus'){
             steps {
                 nexusArtifactUploader artifacts: 
-                [[artifactId: 'ikeDevOpsLab', 
+                [[artifactId: '${ArtifactId}', 
                 classifier: '', 
                 file: 'target/ikeDevOpsLab-0.0.14-SNAPSHOT.war', 
                 type: 'war']], 
                 credentialsId: '3594602f-d4f2-4df6-aeea-bee3afe852e7', 
-                groupId: 'com.ikedevopslab', 
+                groupId: '${GroupId}', 
                 nexusUrl: '172.20.10.30:8081', 
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
                 repository: 'IkeDevopsLab-SNAPSHOT', 
-                version: '0.0.14-SNAPSHOT'
+                version: '${Version}'
 
             }
         }
