@@ -41,7 +41,7 @@ pipeline{
                 nexusArtifactUploader artifacts: 
                 [[artifactId: "${ArtifactId}", 
                 classifier: '', 
-                file: 'target/ikeDevOpsLab-0.0.14-SNAPSHOT.war', 
+                file: 'target/IkeDevOpsLab-0.0.14-SNAPSHOT.war', 
                 type: 'war']], 
                 credentialsId: '3594602f-d4f2-4df6-aeea-bee3afe852e7', 
                 groupId: "${GroupId}", 
